@@ -17,8 +17,8 @@ Users can explore:
 - Temperature behavior
 - Rainfall patterns
 - Extreme weather conditions
-- City-level comparisons
-- Real-time metrics
+- City level comparisons
+- Real time metrics
 
 ---
 
@@ -30,7 +30,7 @@ Users can explore:
 - Interactive dashboard
 - Dynamic city filtering
 - Live chart generation
-- Real-time metrics table
+- Real time metrics table
 - Machine learning extension
 
 ---
@@ -178,6 +178,9 @@ Located in `tests/`
 
 ## How to Run
 
+Username: admin
+Password: wrongpassword
+
 ```bash
 pip install -r requirements.txt
 python run_app.py
@@ -191,4 +194,7 @@ Open:
 
 ## Final Reflection
 
-WeatherStats demonstrates secure web development, modular Python architecture, analytics engineering, visualization design, and professional software presentation.
+This project helped me understand how to build and structure a full stack Python application by separating backend logic with Flask, data processing with Pandas, visualization with Matplotlib, and frontend interaction using HTML templates and JavaScript. I learned how these components work together to create a functional interactive dashboard and gained experience handling CSV uploads, session management, and dynamic updates without full page reloads. Deploying the application to a cloud environment also taught me how production systems differ from local development, especially around port configuration, dependencies, and startup behavior. Overall, the project strengthened my ability to debug issues, interpret logs, and build a complete end to end data driven web application.
+
+The application is deployed and accessible at:
+https://weatherstats-final-project.onrender.com
