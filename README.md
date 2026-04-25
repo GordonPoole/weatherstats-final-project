@@ -183,7 +183,7 @@ Password: wrongpassword
 
 ```bash
 pip install -r requirements.txt
-python run_app.py
+python3 web_app.py
 ```
 
 Open:
