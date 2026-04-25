@@ -1,5 +1,8 @@
 # WeatherStats Final Project
 
+Username: admin
+Password: wrongpassword
+
 ## Overview
 
 WeatherStats is a Python web application designed to analyze and visualize Australian weather data through an interactive browser dashboard. The system allows authenticated users to securely log in, upload CSV weather datasets, and explore city level insights using live charts, dynamic filtering, and real time weather metrics.
@@ -196,5 +199,12 @@ Open:
 
 This project helped me understand how to build and structure a full stack Python application by separating backend logic with Flask, data processing with Pandas, visualization with Matplotlib, and frontend interaction using HTML templates and JavaScript. I learned how these components work together to create a functional interactive dashboard and gained experience handling CSV uploads, session management, and dynamic updates without full page reloads. Deploying the application to a cloud environment also taught me how production systems differ from local development, especially around port configuration, dependencies, and startup behavior. Overall, the project strengthened my ability to debug issues, interpret logs, and build a complete end to end data driven web application.
 
-The application is deployed and accessible at:
+**Live Deployment:**
 https://weatherstats-final-project.onrender.com
+
+username: admin
+password: wrongpassword
+
+**GitHub Repository:** 
+https://github.com/GordonPoole/weatherstats-final-project
+
