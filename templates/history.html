@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Search History</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f7fa;
+            text-align: center;
+        }
+
+        h1 {
+            margin-top: 30px;
+        }
+
+        table {
+            margin: 30px auto;
+            border-collapse: collapse;
+            width: 60%;
+            background-color: white;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+
+        th, td {
+            padding: 12px;
+            border: 1px solid #ccc;
+        }
+
+        th {
+            background-color: #4CAF50;
+            color: white;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        a {
+            display: inline-block;
+            margin-top: 20px;
+            text-decoration: none;
+            color: white;
+            background-color: #4CAF50;
+            padding: 10px 20px;
+            border-radius: 5px;
+        }
+
+        a:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Search History</h1>
+
+    <p>Last 20 user actions (most recent first)</p>
+
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>Action</th>
+            <th>Timestamp</th>
+        </tr>
+
+        {% for record in records %}
+        <tr>
+            <td>{{ record.id }}</td>
+            <td>{{ record.action }}</td>
+            <td>{{ record.timestamp }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+
+    <a href="/">Back</a>
+</body>
+</html>

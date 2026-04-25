@@ -1,0 +1,9 @@
+__pycache__/
+*.pyc
+instance/
+outputs/
+uploaded_weather.csv
+venv/
+.env
+.DS_Store
+tests/__pycache__/

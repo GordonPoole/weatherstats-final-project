@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Weather Charts</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f7fa;
+            text-align: center;
+        }
+
+        h1 {
+            margin-top: 30px;
+        }
+
+        select {
+            padding: 10px;
+            font-size: 16px;
+            margin-top: 20px;
+            border-radius: 6px;
+        }
+
+        .chart-box {
+            margin-top: 30px;
+        }
+
+        img {
+            width: 70%;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+            border-radius: 8px;
+        }
+
+        .chart-title {
+            font-weight: bold;
+            margin-top: 15px;
+            font-size: 20px;
+        }
+
+        a {
+            display: inline-block;
+            margin: 30px;
+            text-decoration: none;
+            color: white;
+            background-color: #4CAF50;
+            padding: 10px 20px;
+            border-radius: 5px;
+        }
+
+        a:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+
+<body>
+
+<h1>Weather Visualizations</h1>
+
+<p>Select a chart to view:</p>
+
+<select id="chartSelect" onchange="changeChart()">
+    {% for image in images %}
+        <option value="{{ image }}">
+            {{ image.replace('_', ' ').replace('.png', '').title() }}
+        </option>
+    {% endfor %}
+</select>
+
+<div class="chart-box">
+    <img id="chartImage" src="{{ url_for('chart_file', filename=images[0]) }}">
+
+    <p class="chart-title" id="chartTitle">
+        {{ images[0].replace('_', ' ').replace('.png', '').title() }}
+    </p>
+</div>
+
+<a href="/dashboard">Back</a>
+
+<script>
+function changeChart() {
+    let select = document.getElementById("chartSelect");
+    let file = select.value;
+
+    document.getElementById("chartImage").src = "/charts/" + file;
+
+    document.getElementById("chartTitle").innerText =
+        file.replaceAll("_", " ").replace(".png", "")
+        .replace(/\b\w/g, c => c.toUpperCase());
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Predict Weather</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to right, #4facfe, #00f2fe);
+            color: white;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            margin-top: 80px;
+        }
+
+        h1 {
+            font-size: 42px;
+            margin-bottom: 20px;
+        }
+
+        p.subtitle {
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
+
+        form {
+            margin-top: 30px;
+        }
+
+        input {
+            padding: 10px;
+            margin: 8px;
+            border-radius: 6px;
+            border: none;
+            width: 170px;
+        }
+
+        .btn {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 12px 25px;
+            border-radius: 8px;
+            border: none;
+            background-color: white;
+            color: #4facfe;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background-color: #e6f2ff;
+        }
+
+        .result {
+            margin-top: 30px;
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        a {
+            display: block;
+            margin-top: 20px;
+            color: white;
+            text-decoration: underline;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Tomorrow Rain Prediction</h1>
+
+        <p class="subtitle">
+            Enter today's weather conditions to predict if it will rain tomorrow
+        </p>
+
+        <form method="POST">
+            <input type="number" step="any" name="MinTemp" placeholder="Min Temp (°C)" required>
+            <input type="number" step="any" name="MaxTemp" placeholder="Max Temp (°C)" required>
+            <input type="number" step="any" name="Rainfall" placeholder="Today's Rainfall (mm)" required>
+            <input type="number" step="any" name="Humidity3pm" placeholder="Humidity 3pm (%)" required>
+            <input type="number" step="any" name="Pressure3pm" placeholder="Pressure 3pm (hPa)" required>
+
+            <br>
+            <button type="submit" class="btn">Predict</button>
+        </form>
+
+        {% if result %}
+            <div class="result">
+                Prediction: {{ result }}
+            </div>
+        {% endif %}
+
+        <a href="/">Back</a>
+    </div>
+</body>
+</html>
